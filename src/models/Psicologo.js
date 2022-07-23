@@ -24,7 +24,9 @@ const Psicologo = db.define('psicologo', {
         type: Sequelize.STRING,
         
     },
+    tablename: {
+        Psicologos,
+    }
 })
-
 module.exports = Psicologo;
 
