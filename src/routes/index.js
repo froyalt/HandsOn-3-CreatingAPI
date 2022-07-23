@@ -9,5 +9,14 @@ const psicologoController = require("../controller/psicologoController");
 
 const routes = express.Router();
 
+routes.get("/", (req, res) => {
+    console.log(req.query);
+    res.send("Hello Word!");
+}),
+
 routes.get("/psicologos", psicologoController.listarPsicologo);
+routes.post("/psicologos", psicologoController.cadastrarPsicologo);
+
+
+module.exports = routes;
 

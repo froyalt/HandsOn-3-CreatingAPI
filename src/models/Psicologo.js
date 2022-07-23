@@ -1,7 +1,7 @@
 const Sequelize = require("sequelize");
-const db = require("../database/db");
+const database = require("../database/db");
 
-const Psicologo = db.define('psicologo', {
+const Psicologo = database.define('psicologo', {
     id: {
         type: Sequelize.INTEGER,
         autoIncrement: true,
@@ -22,11 +22,9 @@ const Psicologo = db.define('psicologo', {
     },
     apresentacao: {
         type: Sequelize.STRING,
-        
+            allowNull: false,
     },
-    tablename: {
-        Psicologos,
-    }
+    
 })
 module.exports = Psicologo;
 

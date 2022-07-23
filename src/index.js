@@ -1,6 +1,6 @@
 (async () => {
 
-    const db = require("./database/db");
+    const database = require("./database/db");
     const Psicologo = require("./models/Psicologo");
-    await db.sync();
+    await database.sync();
 })();
