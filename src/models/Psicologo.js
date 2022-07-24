@@ -26,5 +26,7 @@ const Psicologo = database.define('psicologo', {
     },
     
 })
-module.exports = Psicologo;
 
+Psicologo.sync();
+
+module.exports = Psicologo;
