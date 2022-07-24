@@ -21,4 +21,6 @@ const Atendimentos = db.define('atendimentos', {
     
 })
 
+Atendimentos.sync()
+
 module.exports = Atendimentos;
