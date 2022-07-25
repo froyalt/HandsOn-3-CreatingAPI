@@ -4,12 +4,14 @@ const express = require("express");
 // Importação da validação (verifica se senha (min 6) e email são válidos)
 
 const psicologoPostValidation = require("../validations/psicologo/post")
+const loginValidation = require("../validations/auth/login")
 
 // Importação dos controllers
 
 const psicologoController = require("../controller/psicologoController");
 const pacienteController = require("../controller/pacienteController");
 const atendimentoController = require("../controller/atendimentoController")
+const loginController = require("../controller/loginController")
 
 // Ativando o recurso de rotas do Express
 
@@ -43,6 +45,10 @@ routes.delete("/pacientes/:id", pacienteController.deletarPaciente);
 routes.get("/atendimentos", atendimentoController.listarAtendimento);
 routes.get("/atendimentos/:id", atendimentoController.listarIdAtendimento);
 routes.post("/atendimentos", atendimentoController.cadastrarAtendimento);
+
+// Rota Login
+
+routes.post("/login", loginValidation, loginController.login);
 
 module.exports = routes;
 
