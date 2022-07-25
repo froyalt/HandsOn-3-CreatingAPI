@@ -5,7 +5,7 @@ const express = require("express");
 
 const psicologoController = require("../controller/psicologoController");
 const pacienteController = require("../controller/pacienteController");
-
+const atendimentoController = require("../controller/atendimentoController")
 // Ativando o recurso de rotas do Express
 
 const routes = express.Router();
@@ -32,6 +32,10 @@ routes.get("/pacientes/:id", pacienteController.listarIdPaciente);
 routes.post("/pacientes", pacienteController.cadastrarPaciente);
 routes.put("/pacientes/:id", pacienteController.atualizarPaciente);
 routes.delete("/pacientes/:id", pacienteController.deletarPaciente);
+
+// Rotas Atendimentos
+
+routes.get("/atendimentos", atendimentoController.listarAtendimentos);
 
 
 
