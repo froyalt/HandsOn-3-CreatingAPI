@@ -1,11 +1,16 @@
 // Realizando importação do express para criação das rotas com os endpoints respectivos
 const express = require("express");
 
+// Importação da validação (verifica se senha (min 6) e email são válidos)
+
+const psicologoPostValidation = require("../validations/psicologo/post")
+
 // Importação dos controllers
 
 const psicologoController = require("../controller/psicologoController");
 const pacienteController = require("../controller/pacienteController");
 const atendimentoController = require("../controller/atendimentoController")
+
 // Ativando o recurso de rotas do Express
 
 const routes = express.Router();
@@ -21,7 +26,7 @@ routes.get("/", (req, res) => {
 
 routes.get("/psicologos", psicologoController.listarPsicologo);
 routes.get("/psicologos/:id", psicologoController.listarIdPsicologo);
-routes.post("/psicologos", psicologoController.cadastrarPsicologo);
+routes.post("/psicologos", psicologoPostValidation, psicologoController.cadastrarPsicologo);
 routes.put("/psicologos/:id", psicologoController.atualizarPsicologo);
 routes.delete("/psicologos/:id/deletar", psicologoController.deletarPsicologo);
 
