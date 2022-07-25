@@ -1,5 +1,7 @@
 const Psicologo = require("../models/Psicologo");
 const bcrypt = require("bcryptjs");
+const secret = require("../config/secrets")
+const jwt = require("jsonwebtoken")
 
 const loginController = {
   async login(req, res) {
@@ -22,7 +24,15 @@ const loginController = {
         .status(401)
         .json("E-mail ou senha inválido, verifique e tente novamente");
     } else {
-      return res.json("Logado");
+        const token = jwt.sign({
+            id: psicologo.id,
+            nome: psicologo.nome,
+            email: psicologo.email,
+    }, 
+            secret.key
+    );
+
+      return res.json(token);
     }
   },
 };
