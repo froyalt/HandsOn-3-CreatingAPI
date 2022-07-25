@@ -1,6 +1,6 @@
 const Psicologo = require("../models/Psicologo");
 const bcrypt = require("bcryptjs");
-const secret = require("../config/secrets")
+const secret = require("../config/secret")
 const jwt = require("jsonwebtoken")
 
 const loginController = {

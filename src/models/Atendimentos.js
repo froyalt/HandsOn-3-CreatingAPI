@@ -1,8 +1,16 @@
 const Sequelize = require("sequelize");
 const db = require("../database/db");
 const Paciente = require("./Paciente");
+const Psicologo = require("./Psicologo");
 
 const Atendimentos = db.define("atendimentos", {
+  psicologo_id: {
+    type: Sequelize.INTEGER,
+    references: {
+      model: Psicologo,
+      key: "id",
+    },
+  },
   paciente_id: {
     type: Sequelize.INTEGER,
     references: {
@@ -20,6 +28,6 @@ const Atendimentos = db.define("atendimentos", {
   },
 });
 
-Atendimentos.sync();
+Atendimentos.sync()
 
 module.exports = Atendimentos;
