@@ -3,15 +3,16 @@ const express = require("express");
 
 // Importação da validação (verifica se senha (min 6) e email são válidos)
 
-const psicologoPostValidation = require("../validations/psicologo/post")
-const loginValidation = require("../validations/auth/login")
+const psicologoPostValidation = require("../validations/psicologo/post");
+const loginValidation = require("../validations/auth/login");
 
 // Importação dos controllers
 
 const psicologoController = require("../controller/psicologoController");
 const pacienteController = require("../controller/pacienteController");
-const atendimentoController = require("../controller/atendimentoController")
-const loginController = require("../controller/loginController")
+const atendimentoController = require("../controller/atendimentoController");
+const loginController = require("../controller/loginController");
+const dashboardController = require("../controller/dashboardController");
 
 // Ativando o recurso de rotas do Express
 
@@ -20,15 +21,18 @@ const routes = express.Router();
 // Rota teste para checar DB :)
 
 routes.get("/", (req, res) => {
-    console.log(req.query);
-    res.send("Hello Word!");
+  console.log(req.query);
+  res.send("Hello Word!");
 }),
+  // Rotas Psicologo
 
-// Rotas Psicologo
-
-routes.get("/psicologos", psicologoController.listarPsicologo);
+  routes.get("/psicologos", psicologoController.listarPsicologo);
 routes.get("/psicologos/:id", psicologoController.listarIdPsicologo);
-routes.post("/psicologos", psicologoPostValidation, psicologoController.cadastrarPsicologo);
+routes.post(
+  "/psicologos",
+  psicologoPostValidation,
+  psicologoController.cadastrarPsicologo
+);
 routes.put("/psicologos/:id", psicologoController.atualizarPsicologo);
 routes.delete("/psicologos/:id/deletar", psicologoController.deletarPsicologo);
 
@@ -50,5 +54,10 @@ routes.post("/atendimentos", atendimentoController.cadastrarAtendimento);
 
 routes.post("/login", loginValidation, loginController.login);
 
-module.exports = routes;
+// Rotas Dashboard
 
+routes.get("/dashboard/numero-psicologo", dashboardController.numPsicologo)
+routes.get("/dashboard/numero-paciente", dashboardController.numPaciente)
+routes.get("/dashboard/numero-atendimento", dashboardController.numAtendimento)
+
+module.exports = routes;
