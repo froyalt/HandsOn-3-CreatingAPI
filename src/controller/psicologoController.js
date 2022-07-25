@@ -51,7 +51,7 @@ const psicologoController = {
       if (!cadastraPsicologo) {
         res.status(400).json("Houve um erro na requisição.");
       } else {
-        res.status(201).json(cadastraCadastro);
+        res.status(201).json(cadastraPsicologo);
       }
     } catch (error) {
       res.status(400).json({ error });
