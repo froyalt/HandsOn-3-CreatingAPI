@@ -38,8 +38,8 @@ const atendimentoController = {
 
   async cadastrarAtendimento(req, res) {
     try {
-      console.log(psicologo_id)
-      const psicologo_id = req.auth.id
+      console.log(psicologo_id);
+      const psicologo_id = req.auth.id;
       const { paciente_id, data_atendimento, observacao } = req.body;
 
       const cadastraAtendimento = await Atendimento.create({

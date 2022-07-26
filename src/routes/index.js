@@ -60,5 +60,6 @@ routes.post("/login", loginValidation, loginController.login);
 routes.get("/dashboard/numero-psicologo", dashboardController.numPsicologo)
 routes.get("/dashboard/numero-paciente", dashboardController.numPaciente)
 routes.get("/dashboard/numero-atendimento", dashboardController.numAtendimento)
+routes.get("/dashboard/numero-media", dashboardController.numMedia)
 
 module.exports = routes;
