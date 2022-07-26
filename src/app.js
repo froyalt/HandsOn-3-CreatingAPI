@@ -2,11 +2,11 @@
 const express = require("express");
 const db = require("./database/db");
 const routes = require("./routes");
-const handleError = require("./middlewares/handleError")
+const handleError = require("./middlewares/handleError");
 
 const app = express();
 
-db.hasConection(); 
+db.hasConection();
 
 app.use(express.json());
 

@@ -5,6 +5,7 @@ const express = require("express");
 
 const psicologoPostValidation = require("../validations/psicologo/post");
 const loginValidation = require("../validations/auth/login");
+const auth = require("../middlewares/auth")
 
 // Importação dos controllers
 
@@ -48,7 +49,7 @@ routes.delete("/pacientes/:id", pacienteController.deletarPaciente);
 
 routes.get("/atendimentos", atendimentoController.listarAtendimento);
 routes.get("/atendimentos/:id", atendimentoController.listarIdAtendimento);
-routes.post("/atendimentos", atendimentoController.cadastrarAtendimento);
+routes.post("/atendimentos", auth, atendimentoController.cadastrarAtendimento);
 
 // Rota Login
 
@@ -59,5 +60,6 @@ routes.post("/login", loginValidation, loginController.login);
 routes.get("/dashboard/numero-psicologo", dashboardController.numPsicologo)
 routes.get("/dashboard/numero-paciente", dashboardController.numPaciente)
 routes.get("/dashboard/numero-atendimento", dashboardController.numAtendimento)
+routes.get("/dashboard/numero-media", dashboardController.numMedia)
 
 module.exports = routes;

@@ -1,8 +1,8 @@
 const Psicologo = require("../models/Psicologo");
 const bcrypt = require("bcryptjs");
+const Atendimentos = require("../models/Atendimentos");
 
 const psicologoController = {
-
   // GET ALL PSICOLOGOS
 
   listarPsicologo: async (req, res) => {
@@ -42,7 +42,7 @@ const psicologoController = {
     try {
       const { nome, email, senha, apresentacao } = req.body;
 
-      const newSenha = bcrypt.hashSync(senha, 10)
+      const newSenha = bcrypt.hashSync(senha, 10);
 
       const cadastraPsicologo = await Psicologo.create({
         nome,
@@ -95,16 +95,27 @@ const psicologoController = {
     try {
       const { id } = req.params;
 
-      const deletar = await Psicologo.destroy({
-        where: {
-          id: id,
-        },
+      const deletar = await Psicologo.findOne({
+        where: { id: id },
       });
+
+      const verificaFK = await Atendimentos.findOne({
+        where: { psicologo_id: id },
+      });
+
+      if (verificaFK?.psicologo_id == id) {
+        res
+          .status(404)
+          .json(
+            "Não é possível deletar psicólogos que já realizaram atendimento na clínica"
+          );
+      }
 
       if (!deletar) {
         res.status(404).json("Id não encontrado.");
       } else {
-        res.status(204).json("Psicólogo excluído com sucesso!");
+        await Psicologo.destroy({ where: { id } });
+        return res.status(204).json("Psicólogo excluído com sucesso!");
       }
     } catch (error) {
       res.status(404).json({ error });
