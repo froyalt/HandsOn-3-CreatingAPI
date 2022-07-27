@@ -7,7 +7,11 @@ const psicologoController = {
 
   listarPsicologo: async (req, res) => {
     try {
-      const listaPsicologos = await Psicologo.findAll();
+      const listaPsicologos = await Psicologo.findAll({
+        attributes: {
+          exclude: ['senha']
+      }
+      });
       res.status(200).json(listaPsicologos);
     } catch (error) {
       res.status(400).json({ error });
@@ -24,6 +28,9 @@ const psicologoController = {
         where: {
           id: id,
         },
+        attributes: {
+          exclude: ['senha']
+      }
       });
 
       if (!ListaPsicologo) {
