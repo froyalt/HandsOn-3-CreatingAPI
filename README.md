@@ -6,7 +6,7 @@ Com o intuito de melhor atender, agilizar e documentar todas as consultas e aten
 
 <hr>
 
-### **Documentação da API
+### Documentação da API
 
 [![Run in Insomnia}](https://insomnia.rest/images/run.svg)](https://insomnia.rest/run/?label=La%20Vie%20-%20Sa%C3%BAde%20Mental&uri=https%3A%2F%2Fraw.githubusercontent.com%2Ffroyalt%2FHandsOn-3-CreatingAPI%2Fmaster%2Finsomnia.json)
 
