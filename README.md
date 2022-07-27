@@ -2,12 +2,13 @@
 
 Um grupo de amigos psicólogos se juntaram e criaram a clínica La Vie - Saúde Mental que oferece diversos tipos de terapia aos seus pacientes.
 
-Com o intuito de melhor atender, agilizar e documentar todas as consultas e atendimentos.
-Buscam uma API que proporciona-se criar os registros dos psicólogos, pacientes e prontuários diários.
+Com o intuito de melhor atender, agilizar e documentar todas as consultas e atendimentos, solicitaram uma API para proporcionar a criação de registros dos psicólogos, pacientes e atendimentos diários.
 
 <hr>
 
-### **Documentação da API [documentação](https://documentaçãoDoPostmanOuInsonia)**
+### Documentação da API
+
+[![Run in Insomnia}](https://insomnia.rest/images/run.svg)](https://insomnia.rest/run/?label=La%20Vie%20-%20Sa%C3%BAde%20Mental&uri=https%3A%2F%2Fraw.githubusercontent.com%2Ffroyalt%2FHandsOn-3-CreatingAPI%2Fmaster%2Finsomnia.json)
 
 <hr>
 
@@ -20,7 +21,7 @@ imagem do banco de dados ![der]()
 
 ## **API**
 
-Foram utilizado Sequelize mais Express na construção e assim dividido em 5 etapas:
+Foram utilizado Sequelize e Express na construção e assim dividido em 5 etapas:
 <br>
 
 * Login
@@ -31,25 +32,25 @@ Foram utilizado Sequelize mais Express na construção e assim dividido em 5 eta
     <br>
     <br>
 
-## **login**
+## **Login**
 
-No área de login é feito uma autenticação de e-mail e senha q tem como resposta um token gerado pelo [JWT](https://www.npmjs.com/package/jsonwebtoken)
+No área de login é feito uma autenticação de e-mail e senha que retorna um token gerado pelo [JWT](https://www.npmjs.com/package/jsonwebtoken)
 
 ## **Pacientes**
 
-Feito um CRUD bem simples que cosnta na documentação.
+Feito um CRUD de acordo com a documentação.
 
 ## **Psicólogos**
 
-O CRUD foi utilizado o pacote [bcrypt](https://www.npmjs.com/package/bcrypt) fazendo a criptografia para cadastro quanto no login para novos acessos.
+No CRUD foi utilizado o pacote [bcrypt](https://www.npmjs.com/package/bcrypt) fazendo a criptografia na senha do psicólogo.
 
 ### **Atendimentos**
 
-Para criação do atendimento é necessário uma autorização. Essa autorização é feita pelo token.
+Para criação do atendimento é necessário uma autorização. Essa autorização é feita pelo token JWT.
 
 ### **Dashboard**
 
-O Dashboard vai trazer informações mais simples, como número de psicólogos, pacientes, atendimentos e a media entre atendimentos por psicólogos.
+O Dashboard traz informações como: número de psicólogos, número de pacientes, total de atendimentos e a media de atendimentos por psicólogos.
 
 <hr>
 <br>
