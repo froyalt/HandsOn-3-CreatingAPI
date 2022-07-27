@@ -8,7 +8,11 @@ Com o intuito de melhor atender, agilizar e documentar todas as consultas e aten
 
 ### Documentação da API
 
+Para acessar a documentação, basta clicar no botão abaixo para ser redirecionado ao Insomnia
+
 [![Run in Insomnia}](https://insomnia.rest/images/run.svg)](https://insomnia.rest/run/?label=La%20Vie%20-%20Sa%C3%BAde%20Mental&uri=https%3A%2F%2Fraw.githubusercontent.com%2Ffroyalt%2FHandsOn-3-CreatingAPI%2Fmaster%2Finsomnia.json)
+
+Alternativamente, na pasta "Documentação Insomnia" do repositório, você pode executar o git bash localmente e digitar o comando "npx serve" e depois abrir no seu navegador o "localhost:(porta que o bash retornou)" para conferir a documentação completa.
 
 <hr>
 
