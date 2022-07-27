@@ -15,7 +15,7 @@ Com o intuito de melhor atender, agilizar e documentar todas as consultas e aten
 ## **Banco de dados relacional**
 
 Criação do DER no banco de dados
-imagem do banco de dados ![der]()
+imagem do banco de dados [DER](https://prnt.sc/Fxy14MKHD9J6)
 
 <hr>
 
