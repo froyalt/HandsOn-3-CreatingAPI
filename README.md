@@ -12,7 +12,9 @@ Para acessar a documentação, basta clicar no botão abaixo para ser redirecion
 
 [![Run in Insomnia}](https://insomnia.rest/images/run.svg)](https://insomnia.rest/run/?label=La%20Vie%20-%20Sa%C3%BAde%20Mental&uri=https%3A%2F%2Fraw.githubusercontent.com%2Ffroyalt%2FHandsOn-3-CreatingAPI%2Fmaster%2Finsomnia.json)
 
-Alternativamente, na pasta "Documentação Insomnia" do repositório, você pode executar o git bash localmente e digitar o comando "npx serve" e depois abrir no seu navegador o "localhost:(porta que o bash retornou)" para conferir a documentação completa.
+Alternativamente, você pode conferir a documentação completa [aqui](https://62e1bcfbe9b114005a99f749--cheery-tanuki-7ab03e.netlify.app/)
+
+Ou ainda, na pasta "Documentação Insomnia" do repositório, você pode executar localmente o git bash, após isso digitar dentro da linha de comando "npx serve" e abrir no seu navegador o "localhost:(porta que o bash retornou)" para conferir a documentação completa.
 
 <hr>
 
