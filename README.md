@@ -6,6 +6,14 @@ Com o intuito de melhor atender, agilizar e documentar todas as consultas e aten
 
 <hr>
 
+### Instruções para rodar o projeto.
+
+Para executar o projeto é preciso destiná-lo a um banco de dados MYSQL, para isso, vá no arquivo src/database/db.js e associe o seu banco de dados MYSQL, em DB_NAME para nome, DB_USER para usuário e DB_PASS para senha.
+
+Após isso basta executar no node o comando "node .src/app.js"
+
+<hr>
+
 ### Documentação da API
 
 Para acessar a documentação, basta clicar no botão abaixo para ser redirecionado ao Insomnia
